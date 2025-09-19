@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>labjb</groupId>
 	<artifactId>jfpersonalapi</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>jfpersonalapi</name>
 	<description>api projeto jf personal</description>
 	<url/>

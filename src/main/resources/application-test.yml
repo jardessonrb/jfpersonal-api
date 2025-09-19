@@ -1,6 +1,6 @@
 spring:
-  active:
-    profile: "test"
+  profiles:
+    active: test
   application:
     name: jfpersonalapi
   datasource:
@@ -15,6 +15,12 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     show-sql: false
 
+logging:
+  level:
+    root: WARN
+    org.hibernate.SQL: OFF
+    org.hibernate.type.descriptor.sql: OFF
+    org.springframework: WARN
