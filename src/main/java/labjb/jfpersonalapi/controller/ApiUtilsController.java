@@ -11,6 +11,6 @@ public class ApiUtilsController {
 
     @GetMapping
     public ResponseEntity<String> getHello(){
-        return ResponseEntity.ok("api-v1-hello");
+        return ResponseEntity.ok("api-v2-hello");
     }
 }
