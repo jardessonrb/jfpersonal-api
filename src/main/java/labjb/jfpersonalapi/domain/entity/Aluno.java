@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -18,7 +19,6 @@ public class Aluno extends Pessoa {
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "aluno_id")
-    private Set<Matricula> matriculas;
-
+    private Set<Matricula> matriculas = new HashSet<>();
 
 }

@@ -1,12 +1,13 @@
 package labjb.jfpersonalapi.domain.entity;
 
 import jakarta.persistence.*;
-import labjb.jfpersonalapi.domain.enums.SituacaoMatricula;
+import labjb.jfpersonalapi.domain.enums.SituacaoMatriculaEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
@@ -27,12 +28,20 @@ public class Matricula extends BaseEntity {
     @JoinColumn(name = "personal_id")
     private Personal personal;
 
-    private LocalDateTime dataEncerramento;
+    private LocalDate dataEncerramento;
+
+    private LocalDate dataInicio;
+
+    private Integer diaPagamento;
+
+    private Integer quantidadeAulasSemana;
 
     @Enumerated(EnumType.STRING)
-    private SituacaoMatricula situacaoMatricula;
+    private SituacaoMatriculaEnum situacaoMatricula;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "matricula_id")
     private Set<AvaliacaoFisica> avaliacoesFisicas = new HashSet<>();
+
+    private String anamnese;
 }

@@ -5,9 +5,10 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public enum SituacaoMatricula {
-    ATIVA("Ativa"),
-    ENCERRADA("Encerrada");
+public enum TipoPessoaEnum {
+
+    ALUNO("Aluno"),
+    PERSONAL("Personal");
 
     private String descricao;
 }

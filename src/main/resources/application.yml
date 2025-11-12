@@ -2,17 +2,14 @@ spring:
   application:
     name: jfpersonalapi
   datasource:
-    url: jdbc:h2:mem:apidb
-    driverClassName: org.h2.Driver
-    username: sa
-    password:
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+    url: ${DB_URL}
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
-    show-sql: true
-
+    show-sql: ${SHOW_SQL}
+#  jdbc:postgresql://dpg-d489uem3jp1c73cf8j20-a:5432/jfpersonaldb

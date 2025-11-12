@@ -21,4 +21,7 @@ public class Usuario extends BaseEntity {
     @JoinColumn(name = "pessoa_id", unique = true)
     private Pessoa pessoa;
 
+    private String nomeUsuario;
+    private String senha;
+
 }

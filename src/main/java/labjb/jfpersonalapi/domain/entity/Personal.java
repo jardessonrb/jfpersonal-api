@@ -19,4 +19,7 @@ public class Personal extends Pessoa {
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "personal_id")
     private Set<Matricula> matriculas = new HashSet<>();
+
+    private String descricao;
+    private String cref;
 }

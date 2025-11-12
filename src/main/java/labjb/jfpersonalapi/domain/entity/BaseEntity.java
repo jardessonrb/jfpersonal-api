@@ -17,7 +17,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @MappedSuperclass
-public class BaseEntity implements Serializable {
+public abstract class BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -25,7 +25,7 @@ public class BaseEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
+    @Column(unique = true, updatable = false, nullable = false)
     private UUID uuid = UUID.randomUUID();
 
     private Boolean ativo = true;
